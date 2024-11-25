@@ -1,0 +1,258 @@
+.main_block {
+    margin-top: 10vh;
+}
+
+.line {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.filter_block {
+    display: flex;
+}
+
+.filter_block .filter_container {
+    display: flex;
+    margin: 1vw;
+    border-radius: 10px;
+    color: #2A4D69;
+}
+
+.filter_block .filter_container a {
+    background: #99CFF0;
+    display: inline-block;
+    padding: 6px 12px;
+    border-right: 1px solid #749DB6;
+    border-top: 1px solid #749DB6;
+    border-bottom: 1px solid #749DB6;
+    cursor: pointer;
+    transition: .3s;
+
+}
+
+.filter_block .filter_container a.active_filter {
+    background: #8DBEDC;
+    transition: .3s;
+    color: #335D80;
+}
+
+.filter_block .filter_container a:hover {
+    background: #8DBEDC;
+    transition: .3s;
+    color: #335D80;
+}
+
+.filter_block .filter_container a:first-child {
+    padding: 6px 14px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-left: 1px solid #749DB6;
+    cursor: default;
+}
+
+.filter_block .filter_container a:last-child {
+    padding: 6px 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right: 1px solid #749DB6;
+}
+
+
+/* PAGE SWITCHER */
+.page_switcher {
+    display: flex;
+    justify-content: center;
+    margin: 5vh 0;
+}
+
+.page_switcher .page_number {
+    display: inline-block;
+    margin: 0 3px;
+    padding: 2.5px 6px;
+    border-radius: 6px;
+    background: #EEEEEE;
+    transition: .3s;
+    font-size: 17px;
+}
+
+.page_switcher .page_number:hover {
+    background: #E4E4E4;
+    transition: .3s;
+
+}
+.page_switcher .page_number svg {
+    font-size: 16px;
+}
+
+/* PHOTO */
+
+.photo_block {
+    width: 100%;
+}
+
+.photo_block .container {
+    margin: 0.6vw 0.6vw;
+    padding: 4vh 0.75vw;
+    background: #F9E8EA;
+    border-radius: 10px;
+}
+
+.photo_block img {
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.photo_block .photo_ident {
+    width: 100%;
+    background: #FFC3C8;
+    padding: 4px 10px;
+    font-size: 14px;
+    /* font-weight: 600; */
+    border-top: 2px solid #E1ACB0;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.photo_block .photo_ident .id_text {
+    font-weight: bold;
+    background: #B98D91;
+    color: white;
+    padding: 1.5px 3px;
+    border-radius: 5px;
+}
+
+.bottom_panel {
+    display: inline-flex;
+}
+
+.bottom_panel .eye_img {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 8px;
+    color: #8B0000;
+}
+
+.bottom_panel .heart_img {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 8px;
+    cursor: pointer;
+    color: #8B0000;
+}
+
+.bottom_panel .heart_img svg.no_active {
+    color: #8B0000;
+}
+
+.bottom_panel .heart_img svg.active {
+    color: red;
+}
+
+.bottom_panel .stata_text {
+    padding-left: 3px;
+}
+
+/* 1080px */
+
+@media screen and (max-width: 1080px) {
+    
+    .line {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
+
+/* 780px */
+
+@media screen and (max-width: 780px) {
+    
+    .line {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .photo_block .container {
+        padding: 2.5vh 2vw;
+        margin: 2vw 0.6vw;
+    }
+
+    .photo_block {
+        width: 95%;
+    }
+
+    .page_switcher .page_number {
+        font-size: 14px;
+    }
+    
+    .page_switcher .page_number svg {
+        font-size: 13px;
+    }
+
+    .filter_block .filter_container {
+        margin: 2vw;
+        font-size: 14px;
+    }
+
+}
+
+/* 500px */
+
+@media screen and (max-width: 500px) {
+    
+    .line {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .photo_block .container {
+        padding: 2.5vh 3vw;
+        margin: 2vw 0.6vw;
+    }
+
+    .photo_block {
+        width: 96%;
+    }
+
+    .photo_block .photo_ident {
+        font-size: 12px;
+    }
+
+}
+
+/* 386px */
+
+@media screen and (max-width: 386px) {
+    
+    .line {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .photo_block .container {
+        padding: 3vh 3vw;
+        margin: 2vw 0.6vw;
+    }
+
+    .photo_block {
+        width: 96%;
+    }
+
+    .photo_block .photo_ident {
+        font-size: 12px;
+    }
+
+    .page_switcher .page_number {
+        font-size: 13px;
+    }
+
+    .page_switcher .page_number svg {
+        font-size: 11px;
+    }
+
+}

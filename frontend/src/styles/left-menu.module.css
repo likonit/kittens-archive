@@ -1,0 +1,12 @@
+.leftmenuActive {
+    position: fixed;
+    z-index: 1;
+    width: 20vw;
+    height: 93vh;
+    background: #333;
+    top: 7vh;
+}
+
+.leftmenuDisabled {
+    z-index: 0;
+}

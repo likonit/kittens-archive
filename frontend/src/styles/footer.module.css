@@ -1,0 +1,25 @@
+.footer {
+    height: 7vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    background-color: #FFD2D6;
+    border-top: 1px solid #e8b9bd;
+    font-size: 16px;
+}
+
+.footer span {
+    margin: 0 2px;
+}
+
+.footer a {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 500px) {
+    .footer {
+        font-size: 14px;
+    }
+}
