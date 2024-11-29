@@ -26,6 +26,13 @@ export class AppService {
 
     let result: any, toRet: string
 
+    // Исправлена возможность генерации id.
+    if (body.data.id < 1 || body.data.id >= 370) {
+
+        return "error"
+
+    }
+
     switch (action) {
 
         case "like-increase":
@@ -70,21 +77,15 @@ export class AppService {
           break
 
         case "view-increase":
-          await pool.query(`UPDATE photos SET views=views+1 WHERE id = ?`, [body.data.id])
 
+          await pool.query(`UPDATE photos SET views=views+1 WHERE id = ?`, [body.data.id])
           result = (await pool.query(`SELECT affectedRows FROM photos WHERE id = ?`, [body.data.id]))[0]
 
-          if (result.affectedRows == 0) {
+          if (result.affectedRows == 0) 
+            await pool.query("INSERT INTO photos (`id`, `likes`, `views`) VALUES (?, ?, ?)", [body.data.id, 0, 1])
 
-            if (body.data.id <= 1500)
-              await pool.query("INSERT INTO photos (`id`, `likes`, `views`) VALUES (?, ?, ?)", [body.data.id, 0, 1])
-            toRet = "ok"
+          toRet = "ok"
 
-          } else {
-
-            toRet = "ok"
-
-          }
           break
         default:
           break
