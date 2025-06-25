@@ -73,7 +73,6 @@ export class AppService {
           const query = `SELECT * FROM photos${filter} LIMIT ? OFFSET ?`
           result = (await pool.query(query, [body.data.count, body.data.start]))[0]
           toRet = JSON.stringify(result)
-          console.log(query, result)
           break
 
         case "view-increase":
